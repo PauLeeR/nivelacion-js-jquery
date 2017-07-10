@@ -1,15 +1,20 @@
-$(document).ready( function(){
+$(document).ready( function(){//para que no se solapen las llamadas, escribimos bien el selector (padre-hijo) 
 	$(".make .js-menu").hide(); {//esconde el menú hamburguesa cuando se abre recipe.html
 	}
 
 	$(".home .js-back").hide(); {//esconde la flecha cuando se abre index.html
 	}
-				/* Act on the event */
-
+	/* Act on the event */
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
 
+	function printNews(){
+		$(".new-recipes").text("nuevas recetas");
+	}
+	
+	printNews();
 });
+
 
 
 /*
