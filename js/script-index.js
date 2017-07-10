@@ -1,4 +1,4 @@
-$(document).ready( function(){//para que no se solapen las llamadas, escribimos bien el selector (padre-hijo) 
+$(document).ready(function(){//para que no se solapen las llamadas, escribimos bien el selector (padre-hijo) 
 	$(".make .js-menu").hide(); {//esconde el menú hamburguesa cuando se abre recipe.html
 	}
 
@@ -7,14 +7,14 @@ $(document).ready( function(){//para que no se solapen las llamadas, escribimos 
 	/* Act on the event */
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-
-	function printNews(){
-		$(".new-recipes").text("nuevas recetas");
-	}
-	
 	printNews();
+
+	
 });
 
+	function printNews(){ //le doy una clase (new-recipes) al párrafo ya existente en el html y le agrego el nodo texto
+		$(".new-recipes").text("NUEVAS RECETAS");
+	}
 
 
 /*
