@@ -7,7 +7,7 @@ $(document).ready(function(){//para que no se solapen las llamadas, escribimos b
 	/* Act on the event */
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
-	printNews();
+	printNews(); //no olvidar llamar a la función!!! XD
 
 	
 });
@@ -16,21 +16,23 @@ $(document).ready(function(){//para que no se solapen las llamadas, escribimos b
 		$(".new-recipes").text("NUEVAS RECETAS");
 	}
 
-
 /*
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	//console.log('Recipes: ', recipesArray);
+	recipesArray.forEach(function(recipe){//recorro el arreglo de las recetas
+		if (recipe.highlighted === true) {//si las recetas tienen la propiedad highlighted en true, 
+			renderRecipe(recipe.highlighted);//las enviará como parámetro a la función renderRecipe y la llamará (sólo hace un console log por mientras, en donde las pinta/destaca de un color)
+		}
+	});
 }
 
+  
 /*
-* Función que se encarga de pintar UNA recetas que tenga 
-* marcado el atributo "highlighted" como TRUE
-* Aqui se tiene que crear el HTML que esta en el 
-* archivo "templates/templates-recipe.html"
-*/
+* Función que se encarga de pintar UNA recetas que tenga marcado el atributo "highlighted" como TRUE
+* Aqui se tiene que crear el HTML que esta en el archivo "templates/templates-recipe.html" */
 function renderRecipe(recipe) {
 	console.log('Voy a pintar la receta: ', recipe);
 }
@@ -42,7 +44,7 @@ function renderRecipe(recipe) {
 */
 function renderActivities(activitiesArray) {
 	console.log('Activities: ', activitiesArray);
-}
+}	
 
 /*
 * Función que se encarga de pintar una actividad
