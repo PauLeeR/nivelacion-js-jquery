@@ -1,4 +1,10 @@
 $(document).ready( function(){
+	$(".make .js-menu").hide(); {//esconde el menú hamburguesa cuando se abre recipe.html
+	}
+
+	$(".home .js-back").hide(); {//esconde la flecha cuando se abre index.html
+	}
+				/* Act on the event */
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	renderHighlightedRecipes(recipesArray);
